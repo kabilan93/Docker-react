@@ -5,7 +5,7 @@ services:
 # another section
 before_install: # series of commands that will occur before deployment of projecvt or running tests
 # use the dockerfile.dev because its a non production build and has the test suite
-  - docker build -t kabilan93/Docker-react -f Dockerfile.dev .
+  - docker build -t kabilan93/docker-react -f Dockerfile.dev .
 
 #series of commands that needs to run when the test is to be executed
 # travis will monitor the output from these commands and if it recieves a 
@@ -14,4 +14,4 @@ before_install: # series of commands that will occur before deployment of projec
 # the test script by default does nnot automatically exit, so add the commands
 # -- -- coverage at the end of the test command
 script:
-  -  docker run kabilan93/Docker-react npm run test -- --coverage
+  -  docker run kabilan93/docker-react npm run test -- --coverage
